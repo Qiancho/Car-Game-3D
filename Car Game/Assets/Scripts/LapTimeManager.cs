@@ -20,7 +20,7 @@ public class LapTimeManager : MonoBehaviour {
         MilDisplay = MilCount.ToString ("F0");
         Mil.GetComponent<Text> ().text = "" + MilDisplay;
 
-        if (MilCount <= 9) {
+        if (MilCount >= 10) {
             MilCount = 0;
             SecCount += 1;
         }
