@@ -13,34 +13,40 @@ public class LapTimeManager : MonoBehaviour {
     public GameObject Min;
     public GameObject Sec;
     public GameObject Mil;
+    public bool started;
     
 
+
     void Update () {
-        MilCount += Time.deltaTime * 10;
-        MilDisplay = MilCount.ToString ("F0");
-        Mil.GetComponent<Text> ().text = "" + MilDisplay;
+        if(started == true){
+            MilCount += Time.deltaTime * 10;
+            MilDisplay = MilCount.ToString ("F0");
+            Mil.GetComponent<Text> ().text = "" + MilDisplay;
 
-        if (MilCount >= 10) {
-            MilCount = 0;
-            SecCount += 1;
-        }
+            if (MilCount >= 10) {
+                MilCount = 0;
+                SecCount += 1;
+            }
 
-        if (SecCount <= 9) {
-            Sec.GetComponent<Text> ().text = "0" + SecCount + ".";
-        } else {
-            Sec.GetComponent<Text> ().text = "" + SecCount + ".";
-        }
+            if (SecCount <= 9) {
+                Sec.GetComponent<Text> ().text = "0" + SecCount + ".";
+            } else {
+                Sec.GetComponent<Text> ().text = "" + SecCount + ".";
+            }
 
-        if (SecCount >= 60) {
-            SecCount = 0;
-            MinCount += 1;
-        }
+            if (SecCount >= 60) {
+                SecCount = 0;
+                MinCount += 1;
+            }
 
-        if (MinCount <= 9) {
-            Min.GetComponent<Text> ().text = "0" + MinCount + ":";
-        } else {
-            Min.GetComponent<Text> ().text = "" + MinCount + ":";
+            if (MinCount <= 9) {
+                Min.GetComponent<Text> ().text = "0" + MinCount + ":";
+            } else {
+                Min.GetComponent<Text> ().text = "" + MinCount + ":";
+            }
         }
+        
         
     }
 }
+
