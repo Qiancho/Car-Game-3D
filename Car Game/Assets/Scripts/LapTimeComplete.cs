@@ -14,8 +14,11 @@ public class LapTimeComplete : MonoBehaviour {
 
     public GameObject LapTimeBox;
 
-    void OnTriggerEnter () {
+    public GameObject LapCount;
+    public int LapsDone;
 
+    void OnTriggerEnter () {
+        LapsDone += 1;
         if (LapTimeManager.SecCount <= 9) {
             Sec.GetComponent<Text> ().text = "0" + LapTimeManager.SecCount + ".";
         } else {
@@ -33,6 +36,7 @@ public class LapTimeComplete : MonoBehaviour {
         LapTimeManager.MinCount = 0;
         LapTimeManager.SecCount = 0;
         LapTimeManager.MilCount = 0;
+        LapCount.GetComponent<Text> ().text = "" + LapsDone;
 
         HalfLapTrig.SetActive (true);
         LapCompleteTrig.SetActive (false);
