@@ -10,8 +10,8 @@ public class LoadLevels : MonoBehaviour {
         SceneManager.LoadScene(leveltoload);
     }
 
-    // public void exitgame(){
-    //     if (Input.GetKeyDown(KeyCode.Escape)) {
-    //     Application.Quit();
-    // }
+    public void exitgame(){
+
+        Application.Quit();
+    }
 }
