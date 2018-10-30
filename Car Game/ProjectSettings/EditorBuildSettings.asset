@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Race.unity
     guid: a0a04a6c8405a4858911483515bd73a8
+  - enabled: 1
+    path: Assets/Credits.unity
+    guid: ca8b4fb9440f3401fb058becee7d84b3
   m_configObjects: {}
