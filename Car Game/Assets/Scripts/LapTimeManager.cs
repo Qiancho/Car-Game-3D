@@ -8,6 +8,7 @@ public class LapTimeManager : MonoBehaviour {
     public static int MinCount;
     public static int SecCount;
     public static float MilCount;
+    public static float RawTime;
     public static string MilDisplay;
 
     public GameObject Min;
